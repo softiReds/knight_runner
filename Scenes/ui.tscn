@@ -1,0 +1,148 @@
+[gd_scene load_steps=17 format=3 uid="uid://be6nvloqgekt1"]
+
+[ext_resource type="Texture2D" uid="uid://bij345fjito34" path="res://Assets/Items/CollectibleCoin.png" id="1_smcll"]
+[ext_resource type="Texture2D" uid="uid://lo304to5gwqi" path="res://Assets/UI y Krita/FrameCharacter back.png" id="2_ryf15"]
+[ext_resource type="Texture2D" uid="uid://ctpath2ulw3g3" path="res://Assets/UI y Krita/HeadCharacter.PNG" id="3_mmixe"]
+[ext_resource type="Texture2D" uid="uid://by3dgupo4efjk" path="res://Assets/UI y Krita/FrameCharacter front.png" id="4_nt8jn"]
+[ext_resource type="Texture2D" uid="uid://cxmuelclthe86" path="res://Assets/UI y Krita/Marco.png" id="5_g0wmg"]
+[ext_resource type="Texture2D" uid="uid://dmuifd2ocp8fm" path="res://Assets/UI y Krita/Gradient.png" id="6_4vbiv"]
+[ext_resource type="AudioStream" uid="uid://b0gdjhiniupds" path="res://Audio/Level_1_Theme.mp3" id="7_ryf15"]
+[ext_resource type="AudioStream" uid="uid://ro8a210tclu6" path="res://Audio/coin_sound.mp3" id="9_mmixe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y2dbi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ryf15"]
+atlas = ExtResource("1_smcll")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmixe"]
+atlas = ExtResource("1_smcll")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nt8jn"]
+atlas = ExtResource("1_smcll")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0wmg"]
+atlas = ExtResource("1_smcll")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4vbiv"]
+atlas = ExtResource("1_smcll")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3r70p"]
+atlas = ExtResource("1_smcll")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j1oeo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ryf15")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mmixe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nt8jn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0wmg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4vbiv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3r70p")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = -1
+anchor_right = 0.12
+anchor_bottom = 0.062
+offset_top = 609.0
+offset_right = -47.24
+offset_bottom = 608.824
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_y2dbi")
+
+[node name="PointsLabel" type="Label" parent="Panel"]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = -2.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel"]
+texture_filter = 1
+position = Vector2(16, 20)
+scale = Vector2(2.1, 2.1)
+sprite_frames = SubResource("SpriteFrames_j1oeo")
+autoplay = "default"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 3.0
+offset_top = 7.0
+offset_right = 43.0
+offset_bottom = 47.0
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 57.0
+offset_bottom = 48.0
+texture = ExtResource("2_ryf15")
+expand_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="TextureRect"]
+position = Vector2(23, 19)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_mmixe")
+
+[node name="TextureRect2" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -5.0
+offset_right = 59.0
+offset_bottom = 48.0
+texture = ExtResource("4_nt8jn")
+expand_mode = 1
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="TextureRect"]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 0
+offset_left = 60.0
+offset_top = -14.0
+offset_right = 310.0
+offset_bottom = 111.0
+scale = Vector2(0.5, 0.5)
+max_value = 12.0
+texture_over = ExtResource("5_g0wmg")
+texture_progress = ExtResource("6_4vbiv")
+
+[node name="GameAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_ryf15")
+volume_db = -8.5
+autoplay = true
+
+[node name="CoinSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_mmixe")
+volume_db = -4.0

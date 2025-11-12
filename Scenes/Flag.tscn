@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://ilr8hiw7jsow"]
+
+[ext_resource type="Script" uid="uid://g38j7jjlmg0x" path="res://Scripts/Flag.gd" id="1_kn7si"]
+[ext_resource type="Texture2D" uid="uid://mfrp5dl32gqx" path="res://Assets/Items/Flag.png" id="2_kn7si"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ynf5e"]
+size = Vector2(36, 36)
+
+[node name="Trophy" type="Area2D"]
+collision_mask = 7
+script = ExtResource("1_kn7si")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(35, 45)
+scale = Vector2(2, 2)
+texture = ExtResource("2_kn7si")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(35, 45)
+shape = SubResource("RectangleShape2D_ynf5e")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
