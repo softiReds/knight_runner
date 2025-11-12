@@ -1,4 +1,4 @@
-# ⚔️ MazeBound: A Godot Game
+# ⚔️ KnightRunner: A New Godot Game
 
 **KnightRunner** es un videojuego de plataformas 2D desarrollado en **Godot Engine** en el que el jugador controla a un caballero que debe enfrentar diferentes retos para **superar cada nivel** antes de que su salud se agote.
 En cada nivel, el caballero debe recolectar unos objetos especiales para aumentar su puntuación.
