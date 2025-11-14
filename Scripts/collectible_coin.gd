@@ -13,5 +13,5 @@ func _on_body_entered(body: Node2D) -> void:
 		queue_free() # eliminarlo
 		
 		# Notificar al Spawner que el coleccionable fue consumido si la moneda fue generada por el spawner
-		if spawner and self.has_meta("spawned_by_spawner") and self.get_meta("spawned_by_spawner"):
-			spawner.on_collectible_consumed()  # Notificar al Spawner que el coleccionable fue consumido
+		#if spawner and self.has_meta("spawned_by_spawner") and self.get_meta("spawned_by_spawner"):
+		#	spawner.on_collectible_consumed()  # Notificar al Spawner que el coleccionable fue consumido
