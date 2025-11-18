@@ -35,11 +35,25 @@ anchor_left = 0.342
 anchor_top = 0.585
 anchor_right = 0.452
 anchor_bottom = 0.673
-offset_left = 116.016
-offset_top = 191.92
-offset_right = 116.296
-offset_bottom = 191.896
+offset_left = -258.984
+offset_top = 182.92
+offset_right = -258.704
+offset_bottom = 182.896
 theme_override_font_sizes/font_size = 35
 text = "Nivel 1"
 
+[node name="Button2" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.342
+anchor_top = 0.585
+anchor_right = 0.452
+anchor_bottom = 0.673
+offset_left = -111.984
+offset_top = 181.92
+offset_right = -111.704
+offset_bottom = 181.896
+theme_override_font_sizes/font_size = 35
+text = "Nivel 2"
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

@@ -1,28 +1,25 @@
 extends Node
 
 var ui_node
-var music_node  # Referencia al reproductor de música
 
-# Oculta el nod UI al comenzar
 func _ready():
-	ui_node = get_node("/root/Ui")
+
+	# Obtiene la UI con una ruta relativa en el árbol
+	ui_node = get_tree().get_root().get_node("Ui")
 	ui_node.hide()
-	
-	# Obtener la referencia al AudioStreamPlayer que está reproduciendo la música
-	music_node = get_node("/root/Ui/GameAudio")  # Ajusta la ruta a tu nodo de música
-	music_node.stop()  # Detener la música
-	
+
+	# Detiene cualquier música que esté reproduciéndose
+	MusicManager.stop_music()
+
 	SingleGameManager.reset_stats()
 
-# Muestra el árbol al terminar
 func _exit_tree():
+	# Muestra nuevamente la UI al abandonar el menú
 	ui_node.show()
-	
-	# Reproducir música
-	music_node.play()
+	# No reproducir música aquí — la música la reproduce el nivel automáticamente
 
 func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/nivel1.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Nivel1.tscn")
 
 func _on_button_2_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/nivel2.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Nivel2.tscn")

@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 SingleGameManager="*res://Scripts/SingleGameManager.gd"
 Ui="*res://Scenes/ui.tscn"
+MusicManager="*res://Scripts/MusicManager.gd"
 
 [display]
 

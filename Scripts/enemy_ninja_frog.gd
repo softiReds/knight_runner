@@ -11,12 +11,10 @@ func _ready():
 
 # Dos funciones de colisión que referencian los RayCast2D
 func nearPlayer():
-	var near_node = get_node("/root/Node/EnemyNinjaFrog/Near")  # Ruta explícita a near
-	return near_node.is_colliding()
+	return $Near.is_colliding()  # Ruta explícita a near
 
 func seePlayer():
-	var right_node = get_node("/root/Node/EnemyNinjaFrog/Right")  # Ruta explícita a Right
-	return right_node.is_colliding()
+	return $Right.is_colliding()  # Ruta explícita a Right
 
 # Funciones del movimiento y salto del enemigo
 func move():
