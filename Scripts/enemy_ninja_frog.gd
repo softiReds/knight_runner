@@ -4,6 +4,11 @@ const SPEED = 80
 const GRAVITY = 90
 const JUMP_POWER = -1000.0
 var n_jumps = 1
+@onready var game_manager = $"/root/SingleGameManager"
+
+# Tiempo mínimo entre daños al jugador (en segundos)
+var damage_cooldown = 1.0
+var damage_timer = 0.0
 
 func _ready():
 	velocity.x = 0
@@ -40,5 +45,11 @@ func _physics_process(_delta):
 	if nearPlayer():
 		jump()
 		n_jumps = 0
-
 	move_and_slide()
+
+func _on_hurtbox_body_entered(body: Node2D) -> void:
+	print("ENTRA AL HURTBOX: ", body, " | name: ", body.name)
+
+	if body.name == "Player":
+		print("TAMBIÉN FUNCIONA")
+		SingleGameManager.decrease_health()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://drt4v34mcprc4"]
+[gd_scene load_steps=34 format=3 uid="uid://drt4v34mcprc4"]
 
 [ext_resource type="Script" uid="uid://bgmpbi25xn1wg" path="res://Scripts/enemy_ninja_frog.gd" id="1_0mll7"]
 [ext_resource type="Texture2D" uid="uid://bq6x02tl373um" path="res://Assets/Characters/NinjaFrog/Fall (32x32).png" id="2_joj25"]
@@ -207,6 +207,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_umn70"]
 size = Vector2(16.3333, 21.6667)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0mll7"]
+size = Vector2(22.9412, 24.7059)
+
 [node name="EnemyNinjaFrog" type="CharacterBody2D"]
 position = Vector2(8, 14)
 scale = Vector2(1.7, 1.7)
@@ -223,6 +226,7 @@ autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(19.5, 21.5)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_umn70")
 
 [node name="Right" type="RayCast2D" parent="."]
@@ -234,3 +238,15 @@ collision_mask = 6
 position = Vector2(21, 19)
 target_position = Vector2(20, 0)
 collision_mask = 6
+
+[node name="Hurtbox" type="Area2D" parent="."]
+position = Vector2(20, 21.7647)
+collision_layer = 8
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(-0.294119, -0.58824)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_0mll7")
+
+[connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
