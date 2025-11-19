@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://706x4rspis15"]
+[gd_scene load_steps=6 format=3 uid="uid://gnf7iarouppq"]
 
-[ext_resource type="PackedScene" uid="uid://dnw6xntfv0vfy" path="res://Scenes/BaseLevel.tscn" id="1_umhqu"]
+[ext_resource type="PackedScene" path="res://Scenes/BaseLevel.tscn" id="1_umhqu"]
 [ext_resource type="AudioStream" uid="uid://b0gdjhiniupds" path="res://Audio/Level_1_3_Theme.mp3" id="2_hdxwh"]
 [ext_resource type="Texture2D" uid="uid://cy3pprudw5j10" path="res://Assets/Scenary/Background 1.png" id="2_j4wpc"]
 [ext_resource type="PackedScene" uid="uid://drt4v34mcprc4" path="res://Scenes/enemy_ninja_frog.tscn" id="2_vujgx"]
