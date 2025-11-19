@@ -1,9 +1,12 @@
-[gd_scene load_steps=18 format=3 uid="uid://be6nvloqgekt1"]
+[gd_scene load_steps=21 format=3 uid="uid://be6nvloqgekt1"]
 
 [ext_resource type="Script" uid="uid://co4o1sx6aya8c" path="res://Scripts/ui.gd" id="1_ryf15"]
 [ext_resource type="Texture2D" uid="uid://bij345fjito34" path="res://Assets/Items/CollectibleCoin.png" id="1_smcll"]
+[ext_resource type="AudioStream" uid="uid://behuj67qu73bw" path="res://Audio/hit_sound.mp3" id="2_4vbiv"]
+[ext_resource type="AudioStream" uid="uid://c4lsqaeqlyiuk" path="res://Audio/Power_up_sound.mp3" id="2_nt8jn"]
 [ext_resource type="Texture2D" uid="uid://lo304to5gwqi" path="res://Assets/UI y Krita/FrameCharacter back.png" id="2_ryf15"]
 [ext_resource type="Texture2D" uid="uid://ctpath2ulw3g3" path="res://Assets/UI y Krita/HeadCharacter.PNG" id="3_mmixe"]
+[ext_resource type="AudioStream" uid="uid://1n2ue23rubix" path="res://Audio/Game_over_sound.mp3" id="4_g0wmg"]
 [ext_resource type="Texture2D" uid="uid://by3dgupo4efjk" path="res://Assets/UI y Krita/FrameCharacter front.png" id="4_nt8jn"]
 [ext_resource type="Texture2D" uid="uid://cxmuelclthe86" path="res://Assets/UI y Krita/Marco.png" id="5_g0wmg"]
 [ext_resource type="Texture2D" uid="uid://dmuifd2ocp8fm" path="res://Assets/UI y Krita/Gradient.png" id="6_4vbiv"]
@@ -65,13 +68,21 @@ animations = [{
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_ryf15")
 
+[node name="HitSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_4vbiv")
+volume_db = -18.0
+
 [node name="ExtraHeartSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_nt8jn")
+volume_db = -10.0
 
 [node name="CoinSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_mmixe")
-volume_db = -16.0
+volume_db = -22.0
 
 [node name="GameOverSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_g0wmg")
+volume_db = -10.0
 
 [node name="Panel" type="Panel" parent="."]
 anchors_preset = -1

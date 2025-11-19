@@ -14,7 +14,7 @@ func _ready():
 	
 	# Cargar la música del menú
 	menu_music = load("res://Audio/Music/Main_Theme.mp3")
-	MusicManager.set_volume(-10.0)
+	MusicManager.set_volume(-12.0)
 	MusicManager.play_music(menu_music)
 
 	SingleGameManager.reset_stats()

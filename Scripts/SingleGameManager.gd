@@ -14,9 +14,11 @@ var extra_heart_sound
 var hit_sound
 var game_over_sound
 
-#func _ready():
-	#extra_heart_sound = get_node("/root/Ui/ExtraHeartSound")
-	#game_over_sound = get_node("/root/Ui/GameOverSound")
+func _ready():
+	# Accedemos a los nodos con los audioStreamPlayers de UI
+	extra_heart_sound = get_node("/root/Ui/ExtraHeartSound")
+	game_over_sound = get_node("/root/Ui/GameOverSound")
+	hit_sound = get_node("/root/Ui/HitSound")
 
 func register_ui(points_label_ref, progress_ref, hearts_ref):
 	# Método que registra nodos de la UI para poder actualizarlos
@@ -42,6 +44,7 @@ func add_points():
 
 func add_life():
 	# Suma una vida si no ha llegado al máximo permitido
+	extra_heart_sound.playing = true
 	lives += 1
 	lives = min(lives, MAX_LIVES)
 	update_hearts_ui()
@@ -63,12 +66,12 @@ func reset_stats():
 func decrease_health():
 	# Reduce la cantidad de vidas y actualiza visualmente los corazones
 	lives -= 1
-	print(lives)
-
+	hit_sound.playing = true
 	update_hearts_ui()
 
 	# Si las vidas llegan a 0, se reinicia el nivel y las estadísticas
 	if lives <= 0:
+		game_over_sound.playing = true
 		lives = 3
 		reset_stats()
 		get_tree().call_deferred("reload_current_scene")

@@ -8,7 +8,7 @@
 
 [node name="Nivel1" instance=ExtResource("1_umhqu")]
 level_music = ExtResource("2_hdxwh")
-music_volume_db = -14.0
+music_volume_db = -18.0
 
 [node name="TextureRect" parent="SceneObjects" index="0"]
 texture = ExtResource("2_j4wpc")

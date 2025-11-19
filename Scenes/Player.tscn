@@ -174,4 +174,4 @@ one_shot = true
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_52ee3")
-volume_db = -7.811
+volume_db = -12.0
