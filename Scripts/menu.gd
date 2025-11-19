@@ -1,6 +1,7 @@
 extends Node
 
 var ui_node
+var menu_music: AudioStream
 
 func _ready():
 
@@ -10,6 +11,11 @@ func _ready():
 
 	# Detiene cualquier música que esté reproduciéndose
 	MusicManager.stop_music()
+	
+	# Cargar la música del menú
+	menu_music = load("res://Audio/Main_Theme.mp3")
+	MusicManager.set_volume(-10.0)
+	MusicManager.play_music(menu_music)
 
 	SingleGameManager.reset_stats()
 

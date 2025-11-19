@@ -19,6 +19,9 @@ func play_music(stream: AudioStream):
 	current_track.stream = stream
 	current_track.play()
 
+func set_volume(db: float):
+	current_track.volume_db = db
+
 func stop_music():
 	# Detiene cualquier pista que esté en reproducción
 	current_track.stop()
