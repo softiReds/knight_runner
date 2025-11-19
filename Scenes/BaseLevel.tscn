@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bsmu548la5hem" path="res://Scripts/base_level.gd" id="1_1hb7a"]
 [ext_resource type="Texture2D" uid="uid://cwre7icp1bdap" path="res://Assets/Scenary/Terrain (18 x 18).png" id="2_yqp1w"]
-[ext_resource type="PackedScene" uid="uid://um27qp0riaad" path="res://Scenes/character_body_2d.tscn" id="3_0ohif"]
-[ext_resource type="Script" uid="uid://d4hgorg87qmyb" path="res://Scripts/character_body_2d.gd" id="4_08eeq"]
+[ext_resource type="PackedScene" uid="uid://um27qp0riaad" path="res://Scenes/Player.tscn" id="3_0ohif"]
+[ext_resource type="Script" uid="uid://d4hgorg87qmyb" path="res://Scripts/Player.gd" id="4_08eeq"]
 [ext_resource type="PackedScene" uid="uid://eltdw28mak6d" path="res://Scenes/collectible_coin.tscn" id="5_o8m62"]
 [ext_resource type="PackedScene" uid="uid://ilr8hiw7jsow" path="res://Scenes/Flag.tscn" id="6_g8yfn"]
 
@@ -318,16 +318,16 @@ wait_time = 0.1
 
 [node name="Collectibles" type="Node" parent="SceneObjects"]
 
-[node name="CollectibleCoin11" parent="SceneObjects/Collectibles" instance=ExtResource("5_o8m62")]
+[node name="CollectibleCoin10" parent="SceneObjects/Collectibles" instance=ExtResource("5_o8m62")]
 position = Vector2(1677, 389)
 
-[node name="CollectibleCoin10" parent="SceneObjects/Collectibles" instance=ExtResource("5_o8m62")]
+[node name="CollectibleCoin9" parent="SceneObjects/Collectibles" instance=ExtResource("5_o8m62")]
 position = Vector2(1484, 371)
 
-[node name="CollectibleCoin9" parent="SceneObjects/Collectibles" instance=ExtResource("5_o8m62")]
+[node name="CollectibleCoin8" parent="SceneObjects/Collectibles" instance=ExtResource("5_o8m62")]
 position = Vector2(1251, 433)
 
-[node name="CollectibleCoin" parent="SceneObjects/Collectibles" instance=ExtResource("5_o8m62")]
+[node name="CollectibleCoin1" parent="SceneObjects/Collectibles" instance=ExtResource("5_o8m62")]
 position = Vector2(32.0001, 64)
 
 [node name="CollectibleCoin2" parent="SceneObjects/Collectibles" instance=ExtResource("5_o8m62")]
@@ -347,9 +347,6 @@ position = Vector2(1034, 273)
 
 [node name="CollectibleCoin7" parent="SceneObjects/Collectibles" instance=ExtResource("5_o8m62")]
 position = Vector2(798, 205)
-
-[node name="CollectibleCoin8" parent="SceneObjects/Collectibles" instance=ExtResource("5_o8m62")]
-position = Vector2(987, 412)
 
 [node name="Flag" parent="SceneObjects" instance=ExtResource("6_g8yfn")]
 position = Vector2(1855, 383)

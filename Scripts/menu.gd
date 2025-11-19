@@ -13,7 +13,7 @@ func _ready():
 	MusicManager.stop_music()
 	
 	# Cargar la música del menú
-	menu_music = load("res://Audio/Main_Theme.mp3")
+	menu_music = load("res://Audio/Music/Main_Theme.mp3")
 	MusicManager.set_volume(-10.0)
 	MusicManager.play_music(menu_music)
 

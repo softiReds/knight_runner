@@ -45,11 +45,9 @@ func _physics_process(_delta):
 	if nearPlayer():
 		jump()
 		n_jumps = 0
+
 	move_and_slide()
 
 func _on_hurtbox_body_entered(body: Node2D) -> void:
-	print("ENTRA AL HURTBOX: ", body, " | name: ", body.name)
-
 	if body.name == "Player":
-		print("TAMBIÉN FUNCIONA")
 		SingleGameManager.decrease_health()
