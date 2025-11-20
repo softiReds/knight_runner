@@ -4,7 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://b0gdjhiniupds" path="res://Audio/Music/Level_1_3_Theme.mp3" id="2_hdxwh"]
 [ext_resource type="Texture2D" uid="uid://cy3pprudw5j10" path="res://Assets/Scenary/Background 1.png" id="2_j4wpc"]
 [ext_resource type="PackedScene" uid="uid://drt4v34mcprc4" path="res://Scenes/Skeleton_enemy.tscn" id="2_vujgx"]
-[ext_resource type="PackedScene" uid="uid://cwpx8otgtxef0" path="res://Scenes/Nivel3.tscn" id="4_hdxwh"]
+[ext_resource type="PackedScene" uid="uid://oktrjytdrnub" path="res://Scenes/Nivel2.tscn" id="4_ynj8v"]
 
 [node name="Nivel1" instance=ExtResource("1_umhqu")]
 level_music = ExtResource("2_hdxwh")
@@ -20,7 +20,7 @@ layer_0/tile_data = PackedInt32Array(-65537, 589824, 0, -1, 589824, 0, 65535, 58
 position = Vector2(-61, 553)
 
 [node name="Flag" parent="SceneObjects" index="3"]
-target_level = ExtResource("4_hdxwh")
+target_level = ExtResource("4_ynj8v")
 
 [node name="SkeletonEnemy" parent="." index="1" instance=ExtResource("2_vujgx")]
 position = Vector2(177, 577)
