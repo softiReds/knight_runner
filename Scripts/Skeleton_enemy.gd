@@ -9,6 +9,8 @@ var damage_cooldown = 1.0
 var player_in_range = null
 var damage_timer = 0.0
 
+var blocked = false
+
 func _ready():
 	velocity.x = SPEED
 	# Fuerza a que el sprite mire al mismo lado que velocity.x
@@ -16,13 +18,13 @@ func _ready():
 
 # Dos funciones de colisión que referencian los RayCast2D
 func nearRigth():
-	var right_node = $Near_Right   # Referencia explícita a Near_Right
+	var right_node = get_node("Near_Right")  # Referencia explícita a Near_Right
 	if right_node:
 		return right_node.is_colliding()
 	return false
 
 func nearLeft():
-	var left_node = $Near_Left    # Referencia explícita a Near_Right
+	var left_node = get_node("Near_Left")   # Referencia explícita a Near_Right
 	if left_node:
 		return left_node.is_colliding()
 	return false
@@ -30,7 +32,9 @@ func nearLeft():
 # Función para dar giro de 180 grados al enemigo
 func flip():
 	# Si cualquiera de los RayCast detecta pared, se invierte dirección
-	if nearRigth() or nearLeft():
+	if nearLeft() and velocity.x < 0:
+		velocity.x *= -1
+	elif nearRigth() and velocity.x > 0:
 		velocity.x *= -1
 
 # Gravedad y movimiento al enemigo
@@ -41,7 +45,6 @@ func _physics_process(delta):
 
 	# Movimiento basado en la velocidad actual
 	move_and_slide()
-
 	# Se usa flip_h como sistema único de orientación
 	if velocity.x > 0:
 		$AnimatedSprite2D.flip_h = true

@@ -148,7 +148,6 @@ size = Vector2(19.4118, 25.2941)
 position = Vector2(8, 14)
 scale = Vector2(1.7, 1.7)
 collision_layer = 8
-collision_mask = 7
 script = ExtResource("1_0mll7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -163,25 +162,27 @@ position = Vector2(18.8235, 19.7059)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_umn70")
 
+[node name="Near_Left" type="RayCast2D" parent="."]
+position = Vector2(21, 19)
+scale = Vector2(1, 1)
+target_position = Vector2(-20, 0)
+collision_mask = 4
+
+[node name="Near_Right" type="RayCast2D" parent="."]
+position = Vector2(21, 19)
+scale = Vector2(1, 1)
+target_position = Vector2(20, 0)
+collision_mask = 4
+
 [node name="Hurtbox" type="Area2D" parent="."]
 position = Vector2(20, 21.7647)
-collision_layer = 8
+collision_layer = 32
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 position = Vector2(-1.47059, -3.23529)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_0mll7")
-
-[node name="Near_Right" type="RayCast2D" parent="."]
-position = Vector2(21, 19)
-target_position = Vector2(20, 0)
-collision_mask = 5
-
-[node name="Near_Left" type="RayCast2D" parent="."]
-position = Vector2(21, 19)
-target_position = Vector2(-20, 0)
-collision_mask = 5
 
 [connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
 [connection signal="body_exited" from="Hurtbox" to="." method="_on_hurtbox_body_exited"]

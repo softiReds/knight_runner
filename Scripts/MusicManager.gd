@@ -9,6 +9,8 @@ func _ready():
 	# Se instancia el reproductor de música cuando el autoload inicia
 	current_track = AudioStreamPlayer.new()
 	add_child(current_track)
+	
+	current_track.finished.connect(_on_track_finished)
 
 func play_music(stream: AudioStream):
 	# Si la música solicitada ya está sonando, no se reinicia
@@ -25,3 +27,9 @@ func set_volume(db: float):
 func stop_music():
 	# Detiene cualquier pista que esté en reproducción
 	current_track.stop()
+
+func _on_track_finished():
+	# Reproducimos otra vez cuando termine
+	print("TERMINÓ LA MÚSICA")
+	if current_track.stream:
+		current_track.play()
