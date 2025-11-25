@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://cwpx8otgtxef0"]
+[gd_scene load_steps=8 format=3 uid="uid://cwpx8otgtxef0"]
 
 [ext_resource type="PackedScene" uid="uid://dnw6xntfv0vfy" path="res://Scenes/BaseLevel.tscn" id="1_rkuhe"]
 [ext_resource type="AudioStream" uid="uid://b0gdjhiniupds" path="res://Audio/Music/Level_1_3_Theme.mp3" id="2_3l6mt"]
 [ext_resource type="Texture2D" uid="uid://cy3pprudw5j10" path="res://Assets/Scenary/Background 1.png" id="2_clk0q"]
 [ext_resource type="PackedScene" uid="uid://drt4v34mcprc4" path="res://Scenes/Skeleton_enemy.tscn" id="4_qmg0g"]
 [ext_resource type="PackedScene" uid="uid://cjc23l2748j4h" path="res://Scenes/Menu.tscn" id="4_tvoxb"]
+[ext_resource type="Script" uid="uid://0px2aloxrkln" path="res://Scripts/spikes_area.gd" id="6_2s0px"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_tvoxb"]
+a = Vector2(2969, -42)
+b = Vector2(-15, -44)
 
 [node name="Nivel3" instance=ExtResource("1_rkuhe")]
 level_music = ExtResource("2_3l6mt")
@@ -68,3 +73,12 @@ position = Vector2(1714, 580)
 
 [node name="SkeletonEnemy3" parent="." index="3" instance=ExtResource("4_qmg0g")]
 position = Vector2(2530, 611)
+
+[node name="SpikesArea" type="Area2D" parent="." index="4"]
+position = Vector2(13, 752)
+script = ExtResource("6_2s0px")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpikesArea" index="0"]
+shape = SubResource("SegmentShape2D_tvoxb")
+
+[connection signal="body_entered" from="SpikesArea" to="SpikesArea" method="_on_body_entered"]

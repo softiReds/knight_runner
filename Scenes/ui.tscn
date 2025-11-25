@@ -162,7 +162,7 @@ texture_progress = ExtResource("6_4vbiv")
 [node name="Lives" type="Panel" parent="."]
 offset_left = 188.0
 offset_top = 4.0
-offset_right = 360.0
+offset_right = 451.0
 offset_bottom = 44.0
 
 [node name="HeartsContainer" type="HBoxContainer" parent="Lives"]
@@ -199,6 +199,18 @@ texture = ExtResource("9_nt8jn")
 expand_mode = 2
 
 [node name="Heart4" type="TextureRect" parent="Lives/HeartsContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("9_nt8jn")
+expand_mode = 2
+
+[node name="Heart5" type="TextureRect" parent="Lives/HeartsContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("9_nt8jn")
+expand_mode = 2
+
+[node name="Heart6" type="TextureRect" parent="Lives/HeartsContainer"]
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("9_nt8jn")

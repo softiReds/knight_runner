@@ -29,7 +29,5 @@ func stop_music():
 	current_track.stop()
 
 func _on_track_finished():
-	# Reproducimos otra vez cuando termine
-	print("TERMINÓ LA MÚSICA")
 	if current_track.stream:
 		current_track.play()

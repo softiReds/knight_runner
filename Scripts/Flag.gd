@@ -11,7 +11,7 @@ func _on_body_entered(body: Node2D) -> void:
 		call_deferred("_change_scene")
 
 # Función auxiliar que se ejecuta de forma diferida
-# Diferir = posponer una acción para que se ejecute en un momento seguro
 func _change_scene() -> void:
-	SingleGameManager.reset_stats() 
+	# Reinicia solo el progreso del nivel, no puntos ni vidas
+	SingleGameManager.reset_level_progress()
 	get_tree().change_scene_to_packed(target_level) # Cambio de nivel
