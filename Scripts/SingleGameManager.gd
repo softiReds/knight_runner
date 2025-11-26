@@ -77,7 +77,32 @@ func decrease_health():
 	if lives <= 0:
 		game_over_sound.playing = true
 		reset_stats(true)  # Reinicio completo: puntos totales y vidas
-		get_tree().call_deferred("reload_current_scene")
+		call_deferred("_go_to_menu")  # Cambio de escena a Menú, de forma segura
+
+# Funcón para redirigir al menú
+func _go_to_menu():
+	get_tree().change_scene_to_file("res://Scenes/Menu.tscn")
+
+# Función para reiniciar solo el nivel actual (en caso de spikes / pinchos)
+func reload_current_level():
+	# Obtiene la escena actual y la recarga usando su recurso original
+	var current = get_tree().current_scene
+	if current:
+		# get_scene_file_path() devuelve la ruta del tscn original
+		var path = current.get_scene_file_path()
+		if path != "":
+			get_tree().change_scene_to_file(path)
+		else:
+			print("Warning: current_scene has no file path, cannot reload")
+	else:
+		print("Warning: current_scene is null, cannot reload")
+
+# Función para resetear puntos luego
+func reset_level_on_spikes():
+	points_total -= points_level
+	update_points_ui()
+	# Reinicia solo el progreso del nivel, sin tocar puntos totales ni vidas
+	reset_level_progress()
 
 # --- Actualización UI ---
 func update_hearts_ui():
