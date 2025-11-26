@@ -14,7 +14,6 @@ func test_add_points_incrementa_contadores_y_devuelve_array() -> void:
 	assert_eq(sgm.points_level, 1, "points_level debe incrementarse en 1")
 	assert_eq(result, [1, 1], "La función debe devolver [1, 1]")
 
-
 func test_add_points_da_vida_extra_al_llegar_a_10() -> void:
 	var SGM = load("res://Scripts/SingleGameManager.gd")
 	var sgm = SGM.new()
