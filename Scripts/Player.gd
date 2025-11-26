@@ -31,6 +31,15 @@ func CameraMove():
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta: float) -> void:
+	# Add the save and load
+	if(Input.is_action_just_pressed("Guardar")):
+		SingleGameManager.saveGame()
+	
+	if(Input.is_action_just_pressed("Cargar")):
+		SingleGameManager.loadGame()
+		SingleGameManager.update_points_ui()
+		SingleGameManager.update_hearts_ui()
+
 	# Add the run and idle animation
 	if (velocity.x > 1 || velocity.x < -1):
 		player_sprite.animation = "Run"

@@ -16,6 +16,13 @@ var extra_heart_sound
 var hit_sound
 var game_over_sound
 
+# Variables para guardar datos de puntos y vidas
+var save_path = "user://same_game.dat"
+var game_data : Dictionary ={
+	"puntos":points_total,
+	"vida":lives
+}
+
 func _ready():
 	# Accedemos a los nodos con los audioStreamPlayers de UI
 	extra_heart_sound = get_node("/root/Ui/ExtraHeartSound")
@@ -30,17 +37,16 @@ func register_ui(points_label_ref, progress_ref, hearts_ref):
 	update_hearts_ui()
 	update_points_ui()
 	reset_level_progress()  # Al registrar UI, se reinicia progreso del nivel
-
+	
+# --- Puntos y vidas ---
 func add_points() -> Array[int]:
 	# Incrementa los contadores de puntos y actualiza la UI
 	points_total += 1
 	points_level += 1
 	return [points_total, points_level]
 
-# --- Puntos y vidas ---
 func update_points():
 	update_points_ui()
-	
 	# Si el jugador encuentra los 10 coleccionables en este nivel, suma una vida
 	if points_level >= 10 and lives < MAX_LIVES:
 		add_life()
@@ -126,3 +132,24 @@ func update_points_ui():
 		points_label.text = str(points_total)  # Se muestra el total acumulado
 	if texture_progress_bar:
 		texture_progress_bar.value = points_level  # Barra refleja solo progreso del nivel
+
+# --- Guardar y Cargar Puntos y Vidas ---
+func saveGame() -> void:
+	game_data["puntos"] = points_total
+	game_data["vida"] = lives
+	var save_file = FileAccess.open(save_path, FileAccess.WRITE)
+	
+	save_file.store_var(game_data)
+	save_file = null
+	print("Game Saved")
+	
+func loadGame() -> void:
+	if(FileAccess.file_exists(save_path)):
+		var save_file = FileAccess.open(save_path, FileAccess.READ)
+		
+		game_data = save_file.get_var()
+		save_file = null
+		points_total = game_data["puntos"]
+		lives = game_data["vida"]
+		print("Game Loaded")
+		print(game_data)
