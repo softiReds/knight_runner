@@ -31,11 +31,14 @@ func register_ui(points_label_ref, progress_ref, hearts_ref):
 	update_points_ui()
 	reset_level_progress()  # Al registrar UI, se reinicia progreso del nivel
 
-# --- Puntos y vidas ---
-func add_points():
+func add_points() -> Array[int]:
 	# Incrementa los contadores de puntos y actualiza la UI
 	points_total += 1
 	points_level += 1
+	return [points_total, points_level]
+
+# --- Puntos y vidas ---
+func update_points():
 	update_points_ui()
 	
 	# Si el jugador encuentra los 10 coleccionables en este nivel, suma una vida

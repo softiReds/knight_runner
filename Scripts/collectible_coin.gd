@@ -9,5 +9,6 @@ func _ready():
 func _on_body_entered(body: Node2D) -> void:
 	if (body.name == "Player"):
 		SingleGameManager.add_points()
+		SingleGameManager.update_points()
 		coin_sound.playing = true # Reproducimos el sonido de la moneda
 		queue_free() # eliminarlo
