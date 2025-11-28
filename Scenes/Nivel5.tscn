@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c40u0pbiukn5y"]
+[gd_scene load_steps=7 format=3 uid="uid://c40u0pbiukn5y"]
 
 [ext_resource type="PackedScene" uid="uid://dnw6xntfv0vfy" path="res://Scenes/BaseLevel.tscn" id="1_arise"]
 [ext_resource type="Texture2D" uid="uid://bvhpu7v3mar2i" path="res://Assets/Scenary/Backround3.jpeg" id="2_pr7cc"]
 [ext_resource type="PackedScene" uid="uid://drt4v34mcprc4" path="res://Scenes/Skeleton_enemy.tscn" id="3_20742"]
+[ext_resource type="PackedScene" uid="uid://cjc23l2748j4h" path="res://Scenes/Menu.tscn" id="3_xcukw"]
 [ext_resource type="Script" uid="uid://0px2aloxrkln" path="res://Scripts/spikes_area.gd" id="4_2424g"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_xcukw"]
@@ -22,11 +23,14 @@ layer_0/tile_data = PackedInt32Array(983050, 851968, 7, 983051, 917504, 7, 98305
 [node name="Player" parent="SceneObjects" index="1"]
 position = Vector2(3, 495)
 
+[node name="CollectibleCoin10" parent="SceneObjects/Collectibles" index="0"]
+position = Vector2(1854, 386)
+
 [node name="CollectibleCoin9" parent="SceneObjects/Collectibles" index="1"]
-position = Vector2(1548, 362)
+position = Vector2(1656, 389)
 
 [node name="CollectibleCoin8" parent="SceneObjects/Collectibles" index="2"]
-position = Vector2(1298, 421)
+position = Vector2(1274, 423)
 
 [node name="CollectibleCoin4" parent="SceneObjects/Collectibles" index="6"]
 position = Vector2(329, 488)
@@ -39,6 +43,10 @@ position = Vector2(1055, 265)
 
 [node name="CollectibleCoin7" parent="SceneObjects/Collectibles" index="9"]
 position = Vector2(887, 201)
+
+[node name="Flag" parent="SceneObjects" index="3"]
+position = Vector2(177, 29)
+target_level = ExtResource("3_xcukw")
 
 [node name="SkeletonEnemy" parent="." index="1" instance=ExtResource("3_20742")]
 position = Vector2(1020, 428)

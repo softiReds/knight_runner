@@ -47,3 +47,11 @@ func _on_tutorial_button_pressed() -> void:
 # Botón para cerrar el menú de los controles del juego
 func _on_close_button_pressed() -> void:
 	tutorial_panel.hide()
+
+
+func _on_button_level_4_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Nivel4.tscn")
+
+
+func _on_button_level_5_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Nivel5.tscn")
