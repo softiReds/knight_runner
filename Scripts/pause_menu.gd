@@ -30,4 +30,7 @@ func _on_menu_button_pressed() -> void:
 	# Cierra pausa, reanuda y regresa al menú principal
 	pause_panel.hide()
 	get_tree().paused = false
+	SingleGameManager.reset_level_progress()
+	SingleGameManager.reset_stats()
 	get_tree().change_scene_to_file("res://Scenes/Menu.tscn")
+	

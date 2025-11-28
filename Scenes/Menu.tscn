@@ -125,6 +125,20 @@ offset_bottom = -376.104
 theme_override_font_sizes/font_size = 30
 text = "CONTROLES"
 
+[node name="LoadButton" type="Button" parent="."]
+modulate = Color(0.86029, 0.749817, 0.472977, 1)
+anchors_preset = -1
+anchor_left = 0.342
+anchor_top = 0.585
+anchor_right = 0.452
+anchor_bottom = 0.673
+offset_left = -375.984
+offset_top = -368.08
+offset_right = -268.704
+offset_bottom = -374.104
+theme_override_font_sizes/font_size = 30
+text = "CARGAR DATOS"
+
 [node name="TutorialPanel" type="Panel" parent="."]
 unique_name_in_owner = true
 visible = false
@@ -153,34 +167,33 @@ offset_right = 0.319946
 offset_bottom = 182.432
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_font_sizes/font_size = 30
-text = "Movimiento: Flechas (izquierda, derecha)
+theme_override_font_sizes/font_size = 28
+text = "Movimiento - Flechas (izquierda, derecha)
 
-Saltar: Barra espaciadora y Flecha (arriba)
+Saltar - Barra espaciadora y Flecha (arriba)
 
-Banderas: Te llevan al siguiente nivel
+Zoom In -  R
+Zoom Out - T
+Pausa - Escape
+Guardar Datos de Puntos y Vidas - F5
+Cargar Datos de Puntos y Vidas - F9
 
 Coleccionables: Monedas de cada nivel, si recoges todas sumas una vida
-
-Muerte: Vuelves al menú principal al perder todas tus vidas
-
-
-
-"
+Muerte: Vuelves al menú principal al perder todas tus vidas"
 horizontal_alignment = 1
-vertical_alignment = 2
 
 [node name="CloseButton" type="Button" parent="TutorialPanel"]
+modulate = Color(0.858824, 0.74902, 0.47451, 1)
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -660.0
-offset_top = -167.0
-offset_right = -501.0
-offset_bottom = -104.0
+offset_left = -200.0
+offset_top = -87.0
+offset_right = -40.9999
+offset_bottom = -24.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 40
@@ -193,4 +206,5 @@ text = "CERRAR"
 [connection signal="pressed" from="ButtonLevel5" to="." method="_on_button_level_5_pressed"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="TutorialButton" to="." method="_on_tutorial_button_pressed"]
+[connection signal="pressed" from="LoadButton" to="." method="_on_load_button_pressed"]
 [connection signal="pressed" from="TutorialPanel/CloseButton" to="." method="_on_close_button_pressed"]
