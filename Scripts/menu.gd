@@ -3,6 +3,8 @@ extends Node
 var ui_node
 var menu_music: AudioStream
 
+@onready var tutorial_panel: Panel = %TutorialPanel
+
 func _ready():
 
 	# Obtiene la UI con una ruta relativa en el árbol
@@ -33,7 +35,15 @@ func _on_button_2_pressed() -> void:
 func _on_button_3_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Nivel3.tscn")
 
-# Boton para salir del juego
+# Botón para salir del juego
 func _on_exit_button_pressed() -> void:
 	# Cierra completamente la aplicación
 	get_tree().quit()
+
+# Botón para ver el menú donde se explican los controles del juego
+func _on_tutorial_button_pressed() -> void:
+	tutorial_panel.show()
+
+# Botón para cerrar el menú de los controles del juego
+func _on_close_button_pressed() -> void:
+	tutorial_panel.hide()

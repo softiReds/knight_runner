@@ -118,15 +118,77 @@ anchor_left = 0.342
 anchor_top = 0.585
 anchor_right = 0.452
 anchor_bottom = 0.673
-offset_left = 649.016
-offset_top = -371.08
-offset_right = 621.296
-offset_bottom = -377.104
+offset_left = 455.016
+offset_top = -370.08
+offset_right = 511.296
+offset_bottom = -376.104
 theme_override_font_sizes/font_size = 30
-text = "SALIR"
+text = "CONTROLES"
+
+[node name="TutorialPanel" type="Panel" parent="."]
+unique_name_in_owner = true
+visible = false
+anchors_preset = -1
+anchor_left = 0.045
+anchor_top = 0.058
+anchor_right = 0.963
+anchor_bottom = 0.945
+offset_left = -51.84
+offset_top = -37.584
+offset_right = 42.6239
+offset_bottom = 35.64
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TutorialLabel" type="Label" parent="TutorialPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.043
+anchor_top = 0.049
+anchor_right = 0.965
+anchor_bottom = 0.666
+offset_left = 0.463997
+offset_top = 0.247999
+offset_right = 0.319946
+offset_bottom = 182.432
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Movimiento: Flechas (izquierda, derecha)
+
+Saltar: Barra espaciadora y Flecha (arriba)
+
+Banderas: Te llevan al siguiente nivel
+
+Coleccionables: Monedas de cada nivel, si recoges todas sumas una vida
+
+Muerte: Vuelves al menú principal al perder todas tus vidas
+
+
+
+"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="CloseButton" type="Button" parent="TutorialPanel"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -660.0
+offset_top = -167.0
+offset_right = -501.0
+offset_bottom = -104.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 40
+text = "CERRAR"
 
 [connection signal="pressed" from="ButtonLevel1" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="ButtonLevel2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="ButtonLevel3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
-[connection signal="pressed" from="TutorialButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="TutorialButton" to="." method="_on_tutorial_button_pressed"]
+[connection signal="pressed" from="TutorialPanel/CloseButton" to="." method="_on_close_button_pressed"]
