@@ -29,85 +29,104 @@ grow_horizontal = 2
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("3_syfuq")
 
-[node name="Button1" type="Button" parent="."]
+[node name="ButtonLevel1" type="Button" parent="."]
 anchors_preset = -1
 anchor_left = 0.342
 anchor_top = 0.585
 anchor_right = 0.452
 anchor_bottom = 0.673
-offset_left = -258.984
-offset_top = 182.92
-offset_right = -258.704
-offset_bottom = 182.896
+offset_left = -152.984
+offset_top = 180.92
+offset_right = -152.704
+offset_bottom = 180.896
 theme_override_font_sizes/font_size = 35
 text = "Nivel 1"
 
-[node name="Button2" type="Button" parent="."]
+[node name="ButtonLevel2" type="Button" parent="."]
 anchors_preset = -1
 anchor_left = 0.342
 anchor_top = 0.585
 anchor_right = 0.452
 anchor_bottom = 0.673
-offset_left = -114.984
-offset_top = 182.92
-offset_right = -114.704
-offset_bottom = 182.896
+offset_left = -15.984
+offset_top = 179.92
+offset_right = -15.704
+offset_bottom = 179.896
 theme_override_font_sizes/font_size = 35
 text = "Nivel 2"
 
-[node name="Button3" type="Button" parent="."]
-anchors_preset = -1
-anchor_left = 0.342
-anchor_top = 0.585
-anchor_right = 0.452
-anchor_bottom = 0.673
-offset_left = 28.016
-offset_top = 181.92
-offset_right = 28.296
-offset_bottom = 181.896
+[node name="ButtonLevel3" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -61.0
+offset_top = -89.0
+offset_right = 62.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 0
 theme_override_font_sizes/font_size = 35
 text = "Nivel 3"
 
-[node name="Button4" type="Button" parent="."]
+[node name="ButtonLevel4" type="Button" parent="."]
 anchors_preset = -1
 anchor_left = 0.342
 anchor_top = 0.585
 anchor_right = 0.452
 anchor_bottom = 0.673
-offset_left = 169.016
-offset_top = 181.92
-offset_right = 169.296
-offset_bottom = 181.896
+offset_left = 253.016
+offset_top = 179.92
+offset_right = 253.296
+offset_bottom = 179.896
 theme_override_font_sizes/font_size = 35
 text = "Nivel 4"
 
-[node name="Button5" type="Button" parent="."]
+[node name="ButtonLevel5" type="Button" parent="."]
 anchors_preset = -1
 anchor_left = 0.342
 anchor_top = 0.585
 anchor_right = 0.452
 anchor_bottom = 0.673
-offset_left = 311.016
+offset_left = 389.016
 offset_top = 179.92
-offset_right = 311.296
+offset_right = 389.296
 offset_bottom = 179.896
 theme_override_font_sizes/font_size = 35
 text = "Nivel 5
 "
 
-[node name="Button6" type="Button" parent="."]
+[node name="ExitButton" type="Button" parent="."]
+modulate = Color(0.86029, 0.749817, 0.472977, 1)
 anchors_preset = -1
 anchor_left = 0.342
 anchor_top = 0.585
 anchor_right = 0.452
 anchor_bottom = 0.673
-offset_left = 453.016
-offset_top = 178.92
-offset_right = 453.296
-offset_bottom = 178.896
-theme_override_font_sizes/font_size = 35
-text = "Nivel 6"
+offset_left = 649.016
+offset_top = -371.08
+offset_right = 621.296
+offset_bottom = -377.104
+theme_override_font_sizes/font_size = 30
+text = "SALIR"
 
-[connection signal="pressed" from="Button1" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[node name="TutorialButton" type="Button" parent="."]
+modulate = Color(0.86029, 0.749817, 0.472977, 1)
+anchors_preset = -1
+anchor_left = 0.342
+anchor_top = 0.585
+anchor_right = 0.452
+anchor_bottom = 0.673
+offset_left = 649.016
+offset_top = -371.08
+offset_right = 621.296
+offset_bottom = -377.104
+theme_override_font_sizes/font_size = 30
+text = "SALIR"
+
+[connection signal="pressed" from="ButtonLevel1" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ButtonLevel2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="ButtonLevel3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="TutorialButton" to="." method="_on_exit_button_pressed"]

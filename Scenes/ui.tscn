@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://be6nvloqgekt1"]
+[gd_scene load_steps=22 format=3 uid="uid://be6nvloqgekt1"]
 
 [ext_resource type="Script" uid="uid://co4o1sx6aya8c" path="res://Scripts/ui.gd" id="1_ryf15"]
 [ext_resource type="Texture2D" uid="uid://bij345fjito34" path="res://Assets/Items/CollectibleCoin.png" id="1_smcll"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dmuifd2ocp8fm" path="res://Assets/UI y Krita/Gradient.png" id="6_4vbiv"]
 [ext_resource type="AudioStream" uid="uid://ro8a210tclu6" path="res://Audio/coin_sound.mp3" id="9_mmixe"]
 [ext_resource type="Texture2D" uid="uid://bsjmnkufaandp" path="res://Assets/Items/Heart.png" id="9_nt8jn"]
+[ext_resource type="Script" uid="uid://ok6lnllr1f4l" path="res://Scripts/pause_menu.gd" id="13_3r70p"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y2dbi"]
 
@@ -215,3 +216,64 @@ texture_filter = 1
 layout_mode = 2
 texture = ExtResource("9_nt8jn")
 expand_mode = 2
+
+[node name="PauseMenu" type="Node" parent="."]
+script = ExtResource("13_3r70p")
+
+[node name="PausePanel" type="Panel" parent="PauseMenu"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="PauseMenu/PausePanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.352
+anchor_top = 0.361
+anchor_right = 0.648
+anchor_bottom = 0.639
+offset_left = 0.495972
+offset_top = 0.0719757
+offset_right = -0.495972
+offset_bottom = -0.072052
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "PAUSA"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/PausePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -143.0
+offset_top = -25.0
+offset_right = 135.0
+offset_bottom = 81.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="ResumeButton" type="Button" parent="PauseMenu/PausePanel/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 25
+text = "Continuar"
+
+[node name="MenuButton" type="Button" parent="PauseMenu/PausePanel/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 25
+text = "Salir al menú principal"
+
+[connection signal="pressed" from="PauseMenu/PausePanel/VBoxContainer/ResumeButton" to="PauseMenu" method="_on_resume_button_pressed"]
+[connection signal="pressed" from="PauseMenu/PausePanel/VBoxContainer/MenuButton" to="PauseMenu" method="_on_menu_button_pressed"]

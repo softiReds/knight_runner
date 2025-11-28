@@ -32,3 +32,8 @@ func _on_button_2_pressed() -> void:
 
 func _on_button_3_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Nivel3.tscn")
+
+# Boton para salir del juego
+func _on_exit_button_pressed() -> void:
+	# Cierra completamente la aplicación
+	get_tree().quit()
