@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djjo6rqdgcpfh"
-path="res://.godot/imported/Background 2.png-16e011048e1898dd6198ea99124b0f6a.ctex"
+uid="uid://b0dpsegv32uyn"
+path="res://.godot/imported/The End (Logo).png-f3e224a74e985cb82f8b0da474940be7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Other/Background 2.png"
-dest_files=["res://.godot/imported/Background 2.png-16e011048e1898dd6198ea99124b0f6a.ctex"]
+source_file="res://Assets/Other/The End (Logo).png"
+dest_files=["res://.godot/imported/The End (Logo).png-f3e224a74e985cb82f8b0da474940be7.ctex"]
 
 [params]
 

@@ -23,8 +23,6 @@ var game_data : Dictionary ={
 	"vida":lives
 }
 
-var can_load_from_game := false
-
 func _ready():
 	# Accedemos a los nodos con los audioStreamPlayers de UI
 	extra_heart_sound = get_node("/root/Ui/ExtraHeartSound")

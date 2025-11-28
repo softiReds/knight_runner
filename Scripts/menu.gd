@@ -24,7 +24,7 @@ func _ready():
 func _exit_tree():
 	# Muestra nuevamente la UI al abandonar el menú
 	ui_node.show()
-	# No reproducir música aquí — la música la reproduce el nivel automáticamente
+	MusicManager.play_music(menu_music)
 
 func _on_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Nivel1.tscn")

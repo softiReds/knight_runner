@@ -1,5 +1,7 @@
 extends Node
 
+# Este es el nodo donde se define el menú de pausa
+
 @onready var pause_panel: Panel = %PausePanel
 
 func _ready() -> void:
@@ -31,6 +33,8 @@ func _on_menu_button_pressed() -> void:
 	pause_panel.hide()
 	get_tree().paused = false
 	SingleGameManager.reset_level_progress()
-	SingleGameManager.reset_stats()
+	SingleGameManager.reset_stats(true)
+	SingleGameManager.update_points_ui()
+	SingleGameManager.update_hearts_ui()
 	get_tree().change_scene_to_file("res://Scenes/Menu.tscn")
 	

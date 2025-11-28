@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://dl2um54k6uml6"]
+
+[ext_resource type="Script" uid="uid://ctnke4be3jm5" path="res://Scripts/the_end.gd" id="1_ny8m6"]
+[ext_resource type="Texture2D" uid="uid://dsn1ni60r4yhj" path="res://Assets/Scenary/Background.png" id="2_g14d7"]
+[ext_resource type="Texture2D" uid="uid://b0dpsegv32uyn" path="res://Assets/Other/The End (Logo).png" id="3_ny8m6"]
+
+[node name="TheEnd" type="Node"]
+script = ExtResource("1_ny8m6")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_g14d7")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -495.0
+offset_top = -69.0
+offset_right = 1041.0
+offset_bottom = 955.0
+grow_horizontal = 2
+scale = Vector2(0.7, 0.7)
+size_flags_horizontal = 4
+texture = ExtResource("3_ny8m6")
+
+[node name="ExitButton" type="Button" parent="."]
+modulate = Color(0.86029, 0.749817, 0.472977, 1)
+anchors_preset = -1
+anchor_left = 0.342
+anchor_top = 0.585
+anchor_right = 0.452
+anchor_bottom = 0.673
+offset_left = 488.016
+offset_top = 202.92
+offset_right = 614.296
+offset_bottom = 196.896
+theme_override_font_sizes/font_size = 30
+text = "SALIR DEL JUEGO"
+
+[node name="MenuButton" type="Button" parent="."]
+process_mode = 3
+modulate = Color(0.858824, 0.74902, 0.47451, 1)
+anchors_preset = -1
+anchor_left = 0.026
+anchor_top = 0.901
+anchor_right = 0.366
+anchor_bottom = 0.978
+offset_left = 0.0480003
+offset_top = 0.151978
+offset_right = -113.632
+offset_bottom = -6.74402
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 30
+text = "SALIR AL MENÚ PRINCIPAL"
+
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
