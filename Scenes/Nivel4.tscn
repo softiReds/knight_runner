@@ -8,7 +8,7 @@
 a = Vector2(1513, -46)
 b = Vector2(-15, -44)
 
-[node name="BaseLevel" instance=ExtResource("1_wneh1")]
+[node name="Nivel4" instance=ExtResource("1_wneh1")]
 
 [node name="TextureRect" parent="SceneObjects" index="0"]
 anchor_left = -0.0269098
